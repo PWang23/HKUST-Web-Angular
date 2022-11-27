@@ -30,8 +30,8 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>  
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                    <!-- <a data-toggle="modal" data-target="#loginModal"> -->
+                    <span class="fa fa-sign-in" id="loginButton"></span> Login</a>
                 </span>
             </div>          
         </div>
@@ -87,7 +87,8 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     <div class="offset-md-2 col-md-10">
                         <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-placement="bottom" data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+                         data-target="#reserveModal" id="reserveButton">Reserve Table</a>
+                        <!-- data-placement="bottom" data-toggle="modal" -->
                         <!-- data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>" -->
                         <!-- href="#reserveform" -->
                     </div>
@@ -385,7 +386,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#mycarousel").carousel( { interval: 5000 } );
             $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
@@ -399,6 +400,22 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#loginButton").click(function(){
+                $('#loginModal').modal('toggle');
+            });
+        }); 
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#reserveButton").click(function(){
+                $('#reserveModal').modal('toggle');
+            });
+        }); 
     </script>
     <!-- <script>
         $(document).ready(function(){
