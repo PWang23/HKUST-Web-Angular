@@ -31,4 +31,6 @@ gulp.task('browser-sync', function () {
 });
 
 // Default task
-gulp.task('default', gulp.series('browser-sync', 'sass:watch'));
+gulp.task('default', ['browser-sync'], function() {
+    gulp.start('sass:watch');
+});
