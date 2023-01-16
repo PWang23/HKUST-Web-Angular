@@ -9,14 +9,14 @@ import { LeaderService } from '../services/leader.service';
 })
 export class AboutComponent implements OnInit {
 
-  leaderes: Leader[];
+  leaders: Leader[];
 
   selectedLeader: Leader;
 
   constructor(private leaderService: LeaderService) { }
   
   ngOnInit() {
-    this.leaderService.getLeaderes().then(leaderes => this.leaderes = leaderes)
+    this.leaderService.getLeaders().then(leaders => this.leaders = leaders)
   }
 
   onSelect(leader: Leader) {
